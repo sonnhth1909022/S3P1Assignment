@@ -1,0 +1,28 @@
+﻿@using S3P1Assignment.Models
+@model IEnumerable<S3P1Assignment.Models.Student>
+@{
+    ViewBag.Title = "GetStudentData";
+}
+
+<h3>Student Data</h3>
+<table class="table table-condensed table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(s => s.name)</th>
+            <th>@Html.DisplayNameFor(s => s.age)</th>
+            <th>@Html.DisplayNameFor(s => s.address)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var st in (IEnumerable<Student>)TempData["student"])
+        {
+            <tr>
+                <td>@st.name</td>
+                <td>@st.age</td>
+                <td>@st.address</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
